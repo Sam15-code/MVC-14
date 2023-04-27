@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { Discussion } = require('../../models');
-const withAuth = require('../../Utils/auth');
+const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, async (req, res) => {
     try {
@@ -9,7 +9,7 @@ router.post('/', withAuth, async (req, res) => {
             user_id: req.session.user_id,
         });
         console.log(newDiscussion)
-        res.status(400).json(err);
+        res.status(200).json(newDiscussion);
     } catch (err) {
         res.status(400).json(err);
     }
