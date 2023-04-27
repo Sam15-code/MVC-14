@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../../../../Week 20-React/UofM-VIRT-FSF-PT-11-2022-U-LOLC/14-MVC/01-Activities/28-Stu_Mini-Project/Develop/models');
+const { User } = require('../../models');
 
 router.post('/', async (req, res) => {
   try {
