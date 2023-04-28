@@ -3,6 +3,7 @@ const { Discussion, User } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
+  console.log("get root")
   try {
     // Get all projects and JOIN with user data
     const discussionData = await Discussion.findAll({
@@ -17,10 +18,11 @@ router.get('/', async (req, res) => {
     const projects = discussionData.map((discussion) => discussion.get({ plain: true }));
     // Pass serialized data and session flag into template
     res.render('homepage', {
-     blogs,
+     discussionData,
       logged_in: req.session.logged_in
     });
   } catch (err) {
+    console.log(err)
     res.status(500).json(err);
   }
 });
