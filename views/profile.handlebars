@@ -14,11 +14,10 @@
         <input class="form-input" type="text" id="blogtitle" name="blog title" />
       </div>
       <div class="form-group">
-        <label for="description">blog description</label>
-        {{!-- <textarea rows=10 cols=70 id=“description” name=“description”></textarea> --}}
-        <textarea rows="10" cols="80" id=“blogcontant”></textarea>
+        <label for="project-funding">blog description</label>
+        <textarea rows=10 cols=70 id="description" name="description"></textarea>
       </div>
-      
+
       <div class="form-group">
         <button type="submit" class="btn btn-primary">Create</button>
       </div>
@@ -32,7 +31,7 @@
     {{#each Discussions as |Discussion|}}
     <div class="row mb-2">
       <div class="col-md-8">
-        <h4><a href="/Discussion/{{Discussion.id}}">{{Discussion.BlogTitle}}</a></h4>
+        <h4><a href="/discussion/{{Discussion.id}}">{{Discussion.BlogTitle}}</a></h4>
       </div>
       <div class="col-md-4">
         <button class="btn btn-sm btn-danger" data-id="{{Discussion.id}}">DELETE</button>

@@ -3,12 +3,21 @@
   <p>{{{get_emoji}}}</p>
   <p>{{description}}</p>
   <p>Created by {{user.name}} on {{format_date date_created}}</p>
-  <p>
-    <span for="img" aria-label="money">💲</span>
-    <span class="dollar-amount">{{format_amount needed_funding}}</span>
-    needed
-  </p>
-  <p>
-    <button class="btn btn-primary">Fund this Project!</button>
-  </p>
+
+  {{#each comments as |comment|}}
+  <section>
+
+    {{Text}}
+    {{date_created}}
+  </section>
+  {{/each}}
+
+  <form class="form new-comment">
+    <div class="form-group">
+      <label for="project-name">text</label>
+      <input class="form-input" type="text" id="commentText" name="text" />
+    </div>
+    <button data-postid={{id}} class="btn btn-primary">Add Comment</button>
+  </form>
 </div>
+<script src="/js/comment.js"></script>

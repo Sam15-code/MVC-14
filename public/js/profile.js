@@ -1,10 +1,10 @@
 const newFormHandler = async (event) => {
   event.preventDefault();
-console.log("blog")
-  const BlogTitle = document.querySelector('#blogtitle').value;
-  const description = document.getElementById('blogcontant').value;
 
-console.log(BlogTitle,"profile",document.getElementById('description') )
+  const BlogTitle = document.querySelector('#blogtitle').value.trim();
+  const description = document.querySelector('#description').value.trim();
+
+  console.log(BlogTitle, description)
 
   if (BlogTitle && description) {
     const response = await fetch(`/api/discussion`, {
